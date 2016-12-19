@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Questions page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><ion-icon name="logo-twitter"></ion-icon>  Video Questions  </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <br>
+  <div style="padding-left:10px;padding-right:10px;">
+      <button ion-button color="primary" block (click) = "emailVideosDriver()" round> Email me {{emails_added}} video(s) </button>
+  </div>
+  <br>
+  <ion-list>
+    <ion-card *ngFor="let question of questions">
+
+      <video controls width="100%" height="auto" name="Video Name" poster="{{question.thumbnail_url}}">
+          <source src="{{question.url}}" type="video/mp4">
+      </video>
+
+      <ion-card-content>
+        <ion-card-title>
+          from @{{question.user.screen_name}}
+        </ion-card-title>
+        <p>
+          {{question.text}}
+        </p>
+      </ion-card-content>
+
+      <ion-row no-padding>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-left (click) = "addToEmailList(question.id)" >
+            <ion-icon name="add-circle"></ion-icon>
+            Add to the List 
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+</ion-content>

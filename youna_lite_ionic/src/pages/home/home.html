@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar class="home-bar">
+    <ion-title style="color:#4FC3EA">
+      <h1 class="title"><img class="title-image" src="assets/img/logo.png" width="auto" height="50" /></h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <b>Welcome to You&A Lite, using it you can easily conduct video Q&A's on Twitter. </b>
+  <br> <br>
+  <ion-list>
+    <ion-item>
+      <ion-label >Twitter Username</ion-label>
+      <ion-input  type="text" ngControl = 'username' [value] = "username" [(ngModel)]="username" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <button ion-button color="primary" block (click) = "onSubmit()"> Next </button>
+    <br>
+    <div style="text-align:center">
+      <a (click) = "presentModal()" style="text-align:center"> Questions? </a>
+    </div>
+  </div>
+
+  <ion-footer>
+    <p padding style="text-align: center"> By proceeding further you agree with our <a href="https://youna.io/tos.pdf"> Terms of Service </a> and <a href="https://youna.io/pp.pdf"> Privacy Policy. </a> </p>
+  </ion-footer>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<!--
+  Generated template for the CopyTweet page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span color="primary">Cancel</span>
+      </button>
+    </ion-buttons>
+    <ion-title>Copy your Tweet</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div padding>
+        Copy the below tweet and tweet it via the twitter app to be able to extract the videos that you would like. All video comments posted as a reply to that tweet will be easily extractable. 
+    </div>
+    <ion-card>
+    <ion-card-header>
+      <ion-icon name="logo-twitter"></ion-icon> Tweet
+    </ion-card-header>
+    <ion-card-content>
+      {{generated_tweet}}
+    </ion-card-content>
+    </ion-card>
+    <div>
+        <button ion-button color="primary" block (click) = "copyToClipboard()" round > <ion-icon name="ios-copy-outline"></ion-icon> &nbsp;Copy the Tweet </button>
+    </div>
+</ion-content>
